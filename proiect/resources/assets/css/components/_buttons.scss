@@ -1,0 +1,185 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.button{
+  display: inline-block;
+  padding: map-get($map: $paddings, $key: 'button-4xs') map-get($map: $paddings, $key: 'button-2xs');
+  border: 1px solid transparent;
+  margin: map-get($map: $margins, $key: 'button-4xs');
+  margin-left:0;
+  font-size: map-get($map: $fontSizes, $key: 'text-xs');
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.button-sm{
+  padding: map-get($map: $paddings, $key: 'button-4xs') map-get($map: $paddings, $key: 'button-3xs');
+  font-size: map-get($map: $fontSizes, $key: 'text-3xs');
+  line-height: 1.5;
+}
+
+.button-lg{
+  font-size: map-get($map: $fontSizes, $key: 'text-2xs');
+  @include mq(medium){
+    padding: map-get($map: $paddings, $key: 'button-3xs') map-get($map: $paddings, $key: 'button-xs');
+    font-size: map-get($map: $fontSizes, $key: 'text-xs');
+    line-height: 1.5;
+  }
+}
+
+.button-xl{
+  font-size: map-get($map: $fontSizes, $key: 'text-xs');
+  @include mq(medium){
+    padding: map-get($map: $paddings, $key: 'button-xs') map-get($map: $paddings, $key: 'button-sm');
+    font-size: map-get($map: $fontSizes, $key: 'text');
+    line-height: 1.5;
+  }
+}
+
+.button-fluid{
+  @apply w-full;
+}
+
+.button-danger{
+  @apply bg-red-600 text-white;
+  
+  &:hover{
+    @apply bg-red-700;
+  }
+  
+  &:disabled{
+    @apply border-none bg-red-200 text-black;
+    cursor:not-allowed;
+  }
+}
+
+.button-success{
+  @apply bg-green-600 text-white;
+
+  &:hover{
+    @apply bg-green-700;
+  }
+
+  &:disabled{
+    @apply border-none bg-green-200 text-black;
+    cursor:not-allowed;
+  }
+}
+
+.button-primary{
+  @apply bg-primary-accent text-white;
+  
+  &:hover{
+    @apply bg-primary-accentDarker;
+  }
+
+  &:disabled{
+    @apply border-none bg-purple-200 text-black;
+    cursor:not-allowed;
+  }
+}
+
+.button-dark{
+  @apply bg-black text-white;
+  
+  &:hover{
+    @apply bg-black;
+  }
+
+  &:disabled{
+    @apply border-none bg-gray-200 text-black;
+    cursor:not-allowed;
+  }
+}
+
+.button-outline-primary {
+  @apply border border-primary-accent text-primary-accent;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    @apply bg-primary-accentDarker border-primary-accentDarker text-white;
+  }
+    
+  &:disabled {
+    @apply border-none bg-primary-gray text-white;
+    cursor:not-allowed;
+  }
+}
+
+// Buttons on registration modal with smaller margin-top
+.button-registration {
+  @apply font-medium text-center text-white border bg-primary-accent border-primary-accent;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    @apply bg-primary-accentDarker border-primary-accentDarker;
+  }
+
+  &:disabled {
+    @apply border-none cursor-default bg-primary-gray;
+  }
+}
+
+.button-gray {
+  @apply font-medium border bg-primary-lightGray border-primary-lightGray;
+  letter-spacing: 0.5px;
+  
+  &:hover {
+    // @apply bg-primary-accentDarker border-primary-accentDarker;
+    background-color: $secondary-color;
+    color:black;
+  }
+
+  &:disabled {
+    @apply cursor-default;
+  }
+}
+
+.button-inverted-danger {
+  @apply font-medium text-red-700 bg-white border border-red-700;
+  letter-spacing: 0.5px;
+  &:hover {
+    @apply text-white bg-red-700;
+  }
+}
+
+.button-inverted-primary {
+  @apply font-medium bg-white border text-primary-accent border-primary-accent;
+  letter-spacing: 0.5px;
+  &:hover {
+    @apply text-white border-white bg-primary-accentDarker;
+  }
+}
+
+.button-inverted-success {
+  @apply font-medium text-green-700 bg-white border border-green-700;
+  letter-spacing: 0.5px;
+  &:hover {
+    @apply text-white bg-green-700;
+  }
+}
+
+.button-inverted-white {
+  @apply font-medium text-white border border-white;
+  letter-spacing: 0.5px;
+  &:hover {
+    @apply text-black bg-white;
+    outline: none;
+  }
+}
+
+.button-inverted-gray{
+  @apply font-semibold uppercase bg-primary-accentLighter text-primary-accent;
+  &:hover {
+    @apply text-white border-white bg-primary-accentDarker;
+  }
+}

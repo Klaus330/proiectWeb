@@ -1,0 +1,18 @@
+// 
+//  This file contains all the code for the <pre> and <code> tags used in the
+//  assets page
+// 
+
+pre{
+  padding-top:map-get($map: $paddings, $key: 'text');
+  color:white;
+  background:$secondary-color;
+  border-radius: 10px;
+  text-emphasis: ellipsis;
+  overflow: hidden;
+  overflow-x: scroll;
+  font-size: map-get($map: $fontSizes, $key: 'text-3xs') !important;
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text-xs') !important;
+  }
+}

@@ -1,0 +1,143 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+
+.navbar{
+  @apply flex flex-wrap items-center justify-between py-2 text-black;
+
+
+  .logo-icon{
+    @apply mx-4 h-10 max-w-none -mb-1;
+
+    @include mq(large){
+      @apply mx-6;
+    }
+  }
+
+  @include mq(large){
+    @apply flex-1 py-2 flex-no-wrap justify-end;
+  }
+
+  @include mq(xlarge){
+    @apply h-24;
+  }
+
+  .navbar-container{
+    @apply justify-between w-full bg-white  absolute hidden top-full;
+    padding-right:map-get($map: $paddings, $key: 'text');
+    @include mq(large){
+      @apply flex relative ml-0 top-0 items-center mt-0;
+    }
+  }
+
+  .navbar-nav{
+    @apply text-sm;
+    @include mq(large){
+      @apply flex;
+    }
+
+    .nav-item {
+      @apply text-sm font-semibold uppercase text-center flex items-center align-middle;
+      padding:map-get($map: $paddings, $key: 'menu-item-xs' ) map-get($map: $paddings, $key: 'menu-item-lg' );
+      font-size:map-get($fontSizes,'text-base');
+
+      @include mq(large){
+        padding:map-get($map: $paddings, $key: 'menu-item-xs' ) map-get($map: $paddings, $key: 'menu-item-lg' );
+      }
+
+      @include mq(xlarge){
+        padding:map-get($map: $paddings, $key: 'menu-item' ) map-get($map: $paddings, $key: 'menu-item-lg' );
+        font-size:map-get($fontSizes,'text-base')
+      }
+
+      @include mq(xxlarge){
+        font-size:map-get($fontSizes,'text-base')
+      }
+    }
+
+    .nav-item-hidden{
+      @apply hidden;
+    }
+
+    .nav-link {
+      @apply cursor-pointer mx-auto;
+    }
+
+    .nav-link-black{
+      @apply text-xs cursor-pointer bg-black text-white;
+      padding:map-get($paddings,'text-xs');
+      margin-right:map-get($margins,'text-xs');
+      @include mq(large){
+        @apply text-xs;
+        padding-top:0;
+        padding-bottom: 0;
+      }
+    }
+
+    .nav-language{
+      @apply flex items-center justify-center;
+    }
+  }
+
+  .nav-right{
+    @apply flex flex-col justify-start;
+    .nav-link-black{
+      display: none;
+    }
+
+    @include mq(medium){
+      display:none;
+    }
+
+    @include mq(large){
+      display: flex;
+      flex-direction: row;
+
+      .nav-link-black{
+        display: block;
+      }
+    }
+  }
+
+  .navbar-toggler{
+    @apply flex items-center justify-center;
+    margin-right:map-get($map: $margins, $key: 'text');
+    @include mq(large){
+      @apply hidden;
+    }
+  }
+
+  .menu-nav-toggler{
+    @apply flex items-center justify-center cursor-pointer;
+    margin-right:map-get($map: $margins, $key: 'text');
+    @include mq(large){
+      @apply hidden;
+    }
+  }
+}
+
+.language-dropdown{
+  @apply flex justify-center items-center;
+}
+.language-dropdown-menu{
+  position:absolute;
+  right: 0;
+  bottom:-110%;
+  display: none;
+  width: 100%;
+  padding-left: map-get($map: $paddings, $key: 'text-xs');
+  background: white;
+  @include mq(medium){
+    padding-left: 0;
+    text-align: center;
+  }
+  li{
+    cursor: pointer;
+  }
+}
+
+.user-type {
+  color: $primary-color;
+  text-transform: uppercase;
+  font-weight: 600;
+}

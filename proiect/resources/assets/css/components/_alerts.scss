@@ -1,0 +1,152 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the alerts components.
+// -----------------------------------------------------------------------------
+.alert{
+  padding-left:map-get($paddings,'section-xs');
+  padding-right:map-get($paddings,'section-xs');
+  padding-top:map-get($paddings,'section-sm');
+  padding-bottom:map-get($paddings,'section-sm');
+
+  margin-top:map-get($margins,'section-sm');
+  margin-bottom:map-get($margins,'section-sm');
+
+  font-size: map-get($map: $fontSizes, $key: 'text-xs');
+}
+
+.alert-sm{
+  padding-left:map-get($paddings,'section-xs');
+  padding-right:map-get($paddings,'section-xs');
+  padding-top:map-get($paddings,'section-xxs');
+  padding-bottom:map-get($paddings,'section-xxs');
+
+  margin-top:map-get($margins,'section-xs');
+  margin-bottom:map-get($margins,'section-xs');
+
+  font-size: map-get($map: $fontSizes, $key: 'text-2xs');
+}
+
+.alert-col{
+  @apply flex flex-col items-center;
+}
+
+.alert-heading{
+  @apply font-semibold leading-150;
+}
+
+.alert-description{
+  @apply font-normal leading-150;
+  color:$text-color;
+  font-size:map-get($fontSizes,'text-3xs');
+
+  @include mq(medium){
+    font-size:map-get($fontSizes,'text-xs');
+  }
+}
+
+.alert-extra{
+  @apply font-medium;
+  font-size:map-get($fontSizes,'text-md');
+}
+
+.alert-link{
+  font-weight: 600;
+}
+.alert-primary{
+  @apply text-white;
+  background: $primary-color;
+  .alert-heading{
+    @apply text-white;
+  }
+
+  .alert-extra{
+    @apply text-white;
+  }
+
+  .alert-description{
+    @apply text-white;
+  }
+    
+  .alert-link{
+    @apply text-white;
+  }
+}
+
+.alert-primary-light{
+  @apply bg-primary-accentLight;
+
+  .alert-heading{
+    @apply text-purple-900;
+  }
+
+  .alert-extra{
+    @apply text-purple-800;
+  }
+
+  .alert-description{
+    @apply text-purple-700;
+  }
+    
+  .alert-link{
+    @apply text-purple-900;
+  }
+}
+
+.alert-danger{
+  @apply bg-red-300 text-red-800;
+    
+  .alert-heading{
+    @apply text-red-900;
+  }
+
+  .alert-extra{
+    @apply text-red-800;
+  }
+
+  .alert-description{
+    @apply text-red-700;
+  }
+    
+  .alert-link{
+    @apply text-red-900;
+  }
+}
+
+.alert-warning{
+  @apply bg-yellow-200 text-yellow-800;
+    
+  .alert-heading{
+    @apply text-yellow-900;
+  }
+
+  .alert-extra{
+    @apply text-yellow-800;
+  }
+
+  .alert-description{
+    @apply text-yellow-700;
+  }
+    
+  .alert-link{
+    @apply text-yellow-900;
+  }
+}
+
+.alert-success{
+  @apply bg-green-300 text-green-800;
+    
+  .alert-heading{
+    @apply text-green-900;
+  }
+
+  .alert-extra{
+    @apply text-green-800;
+  }
+
+  .alert-description{
+    @apply text-green-700;
+  }
+    
+  .alert-link{
+    @apply text-green-900;
+  }
+}

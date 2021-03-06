@@ -1,5 +1,8 @@
 <?php
 
+
+namespace App\Core;
+
 /**
 * Dependency Injection Container
  */

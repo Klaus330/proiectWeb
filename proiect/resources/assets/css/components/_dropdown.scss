@@ -1,0 +1,91 @@
+//
+// DROP DOWN MENUS
+//
+
+// Generic Dropdown Classes
+.dropdown-menu {
+  @apply absolute right-0 overflow-hidden bg-white border-t rounded shadow-xl border-primary-lighterGray;
+}
+
+.dropdown-item {
+  @apply flex-row items-center justify-start block text-base border-b border-solid cursor-pointer border-primary-lighterGray;
+  padding: map-get($paddings,'text-xs') map-get($paddings,'text');
+  @include mq(medium){
+    padding: map-get($paddings,'text-sm') map-get($paddings,'text');
+  }
+}
+
+.dropdown-item:hover {
+  @apply text-white bg-primary-accent;
+}
+
+.dropdown-link {
+  @apply px-2 text-sm font-semibold uppercase cursor-pointer;
+}
+
+// Notification Dropdown Classes
+.notification-dropdown {
+  @apply relative px-1 py-2 rounded;
+  &:hover {
+    @apply bg-primary-lighterGray;
+  }
+
+  .notification-dropdown-menu {
+    @apply flex flex-col right-0 top-full;
+    width:18rem;
+    margin-top: map-get($margins, "section-xs");
+    @include mq(medium){
+      @apply w-96;
+    }
+
+    .notification-dropdown-container{
+      @apply overflow-y-auto;
+      max-height: 9rem;
+      @include mq(large){
+        @apply max-h-96;
+      }
+    }
+
+    .notification-mark-button {
+      @apply w-full mx-auto font-semibold text-center border-t cursor-pointer border-primary-lighterGray text-primary-accent;
+      padding: map-get($map: $paddings, $key: 'text-xs') 0;
+      @include mq(medium){
+        padding: map-get($map: $paddings, $key: 'text') 0;
+      }
+
+      &:hover {
+        @apply bg-primary-lighterGray;
+      }
+    }
+
+    .notification-dropdown-info {
+      padding: map-get($paddings, "section-xs");
+      font-size: map-get($map: $fontSizes, $key: "text-3xs");
+    }
+  }
+}
+
+// User Dropdown Classes
+.userdropdown {
+  @apply relative px-1 py-2 rounded;
+  &:hover {
+    @apply bg-primary-lighterGray;
+  }
+}
+
+.userdropdown-toggler {
+  @apply flex items-center px-2;
+
+  @include mq(large) {
+    justify-content: center;
+  }
+
+  .userdropdown-toggler-avatar {
+    @apply w-12 h-12 mr-2 overflow-hidden rounded-full bg-primary-gray;
+  }
+}
+
+.userdropdown-menu {
+  @apply flex flex-col w-48 top-full;
+  right: 0;
+}

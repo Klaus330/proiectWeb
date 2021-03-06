@@ -1,0 +1,138 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the banner components.
+// -----------------------------------------------------------------------------
+.banner{
+  position: relative;
+  display:  flex;
+  overflow: hidden;
+  width: 100%;
+  margin-top:map-get($margins,'section');
+  margin-bottom:map-get($margins,'section');
+  .banner-image{
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    
+    @include mq(medium){
+      @apply w-3/4;
+    }
+
+    @include mq(large){
+      @apply w-1/2;
+    }
+  }
+
+  .banner-video{
+    position: relative;
+    width:100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .banner-body{
+    z-index:10;
+    padding: map-get($paddings,'section-sm');
+    background: white;
+    
+    @include mq(medium){
+      padding: map-get($paddings,'section-md') map-get($paddings,'section-lg');
+    }
+
+    .banner-title{
+      margin-top: map-get($map: $margins, $key: 'text');
+      margin-bottom: map-get($map: $margins, $key: 'text');
+      margin-left: map-get($map: $margins, $key: 'text-xs');
+    }
+  }
+}
+
+.pagebanner{
+  @apply z-10 w-full;
+  .pagebanner-image{
+    @apply h-full flex flex-col justify-center items-center;
+    min-height: $small-screen-min-height;
+    @include mq(medium){
+      min-height: $min-background-image-height;
+      @apply w-4/5;
+    }
+  }
+
+  .pagebanner-content-box{
+    @include overlap-right;
+
+    .pagebanner-content{
+      .pagebanner-title{
+        margin:0;
+      }
+      .pagebanner-subtitle{
+        font-size: 1.875rem;
+      }
+    }
+  }
+}
+
+.bottom-banner{
+  @apply flex-col;
+  overflow: visible;
+  margin-bottom:0;
+  @include mq(medium){
+    margin-bottom: map-get($map: $margins, $key: 'section-xlg');
+  }
+
+  @include mq(large){
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
+  .bottom-banner-video{
+    margin-bottom: map-get($margins,'section-xs');
+    
+    @include mq(large){
+      @apply w-3/4;
+      margin-bottom:0;
+    }
+  }
+
+  .bottom-banner-image{
+    @include mq(medium){
+      width: 100%;
+    }
+    
+    @include mq(large){
+      width: 50%;
+    }
+  }
+
+  .bottom-banner-content-box{
+    position: relative;
+    width:100%;
+    @include mq(medium){
+      @apply w-4/5;
+      @include overlap-right;
+      bottom:-30%;
+    }
+
+    @include mq(large){
+      @apply w-3/5;
+      bottom:0%;
+    }
+
+
+    @include mq(xxlarge){
+      padding:map-get($map: $paddings, $key: 'section-lg')
+    }
+
+    .bottom-banner-title{
+      line-height:130%;
+      @include mq(xlarge){
+        @apply w-4/5;
+      }
+    }
+
+    .bottom-banner-subtitle{
+      @apply w-3/5 mb-16 text-17 leading-180;
+    }
+
+  }
+}

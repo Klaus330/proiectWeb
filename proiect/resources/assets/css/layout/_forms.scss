@@ -1,0 +1,94 @@
+// 
+// FORMS
+// All styling related to input forms, where users enter data
+// 
+
+.form-input {
+  @apply w-full px-3 py-3 text-xs text-black rounded-sm appearance-none bg-primary-accentLighter;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+
+  &::placeholder {
+    color: lighten($text-color,20);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.form-group{
+  @apply my-4;
+  button{
+    @apply mt-2;
+  }
+}
+
+.form-link{
+  @apply cursor-pointer;
+  color: $text-color;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  text-decoration-line: underline;
+}
+
+.form-group-label{
+  @apply block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase;
+}
+
+.form-error-text{
+  @apply mt-2 text-red-600 text-lg;
+}
+
+.form-info-text{
+  @apply mt-2 text-black text-lg;
+}
+
+.form-select{
+  @apply w-full px-6 py-4 text-sm font-medium text-black rounded-sm bg-primary-accent bg-opacity-10;
+}
+
+.selector-text{
+  @apply px-1 py-6 font-semibold text-center whitespace-no-wrap;
+  font-size:map-get($fontSizes,'text-4xs');
+
+  @include mq(medium){
+    @apply text-13;
+  }
+}
+
+.form-coupon-input{
+  padding:map-get($map: $paddings, $key: 'form');
+}
+
+.form-coupon-button{
+  @apply font-semibold whitespace-no-wrap; 
+  padding-left:map-get($paddings,'text-sm');
+  padding-right:map-get($paddings,'text-sm');
+  padding-top:map-get($paddings,'text-xs');
+  padding-bottom:map-get($paddings,'text-xs');
+  margin-right:map-get($margins,'text-xs');
+  color: $text-color;
+  background-color: $secondary-btn-color;
+  font-size:map-get($fontSizes,'text-xs');
+}
+
+
+.form-shadow{
+  @apply shadow-2xl;
+  padding-left: map-get($map: $paddings, $key: 'section');
+  padding-right: map-get($map: $paddings, $key: 'section');
+}
+
+.form-category-title{
+  @apply border-b;
+  padding-top: map-get($map: $paddings, $key: 'text-xs');
+  padding-bottom: map-get($map: $paddings, $key: 'text-xs');
+  margin-top: map-get($map: $margins, $key: 'text');
+}
+
+.form-category-description{
+  font-size: map-get($map: $fontSizes, $key: 'text-2xs');
+}

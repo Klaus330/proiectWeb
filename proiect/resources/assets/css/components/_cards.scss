@@ -1,0 +1,409 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card components.
+// -----------------------------------------------------------------------------
+
+.card {
+  @apply shadow-xl;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  min-width: 0;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  background-clip: border-box;
+  word-wrap: break-word;
+
+  .card-body {
+    padding: 1rem;
+  }
+
+  .card-body-flex {
+    display: flex;
+    padding: 1rem;
+  }
+
+  .card-image {
+    position: relative;
+    width: 100%;
+    height: 150px;
+  }
+
+  .card-title {
+    margin-bottom: 0.75rem;
+  }
+
+  .card-text {
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+    text-align: justify;
+    text-overflow: ellipsis;
+  }
+
+  .card-badge {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    padding: 0 0.75rem;
+    background: $primary-color;
+    color: white;
+    font-size: map-get($map: $fontSizes, $key: "text-3xs");
+  }
+
+  .card-badge-transparent-bg {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    padding: 0 0.75rem;
+    color: white;
+    font-size: map-get($map: $fontSizes, $key: "text-2xs");
+    font-weight: 600;
+    text-transform: uppercase;
+    @apply font-poppins;
+  }
+}
+
+.categoryCard {
+  @apply relative w-full h-full;
+  height: 34vh;
+  min-width: 30vh;
+  background-size: cover;
+  background-position: center;
+
+  .categoryCard-title {
+    @apply absolute bottom-0 w-full py-6 pl-5 text-xl text-white uppercase transition duration-500 ease-out;
+
+    .join {
+      @apply mr-6 text-base;
+      text-transform: none;
+    }
+
+    &.active {
+      display: flex;
+      flex-direction: column;
+      background-color: rgba($color: $primary-color, $alpha: 1);
+    }
+
+    &:hover {
+      background-color: rgba($color: $primary-color, $alpha: 1);
+    }
+  }
+}
+
+.teacherCard {
+  @apply relative w-full overflow-hidden shadow-xl cursor-pointer h-96;
+  margin-top: map-get($margins, "section");
+
+  .teacherCard-avatar-box {
+    @apply relative h-1/2;
+    .teacherCard-wallpaper {
+      @apply h-full bg-center bg-cover;
+    }
+
+    .teacherCard-category-badge {
+      @apply absolute top-0 left-0 px-2 py-1 mt-3 -mb-4 bg-primary-accent;
+    }
+
+    .teacherCard-avatar {
+      @apply border-8 border-white rounded-full;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .teacherCard-content-box {
+    @apply relative flex flex-col items-center justify-center px-5 mt-2 text-center h-1/2;
+
+    .teacherCard-name {
+      @apply w-4/5 mt-4 overflow-hidden font-bold whitespace-no-wrap font-montserrat;
+      text-overflow: ellipsis;
+      @include mq(medium) {
+        @apply w-2/3;
+      }
+    }
+    .teacherCard-description {
+      @apply w-4/5 overflow-hidden whitespace-no-wrap text-primary-lightGray font-montserrat;
+      text-overflow: ellipsis;
+
+      @include mq(medium) {
+        @apply w-2/3;
+      }
+    }
+    .teacherCard-rating {
+      @apply flex items-center justify-center w-full mt-2;
+
+      .teacherCard-rating-number {
+        @apply mt-1 ml-2 text-xs text-primary-lightGray font-poppins;
+      }
+    }
+  }
+}
+
+.ratings-section {
+  padding-left: map-get($map: $paddings, $key: "section");
+  padding-right: map-get($map: $paddings, $key: "section");
+  @include mq(xlarge) {
+    margin-top: map-get($map: $margins, $key: "section-md");
+    padding-left: map-get($map: $paddings, $key: "section-lg");
+    padding-right: map-get($map: $paddings, $key: "section-lg");
+  }
+}
+
+.ratings-grid {
+  @apply grid grid-cols-1;
+  @include mq(medium) {
+    @apply grid-cols-2 gap-2;
+  }
+
+  .rating-card {
+    @apply flex flex-col justify-center w-full h-full shadow-lg;
+    padding: map-get($map: $paddings, $key: "section-xs");
+    margin-bottom: map-get($map: $margins, $key: "section-sm");
+    .user-card-info-container {
+      @apply flex flex-col w-full border-b;
+
+      @include mq(large) {
+        flex-direction: row;
+        border: none;
+      }
+
+      .user-card-info-box {
+        @apply flex items-start flex-1 flex-col;
+        @include mq(large) {
+          flex-direction: row;
+          align-items: center;
+        }
+        .rating-user-name {
+          @apply font-bold text-primary-darkGray;
+          margin-right: map-get($margins, "text-xs");
+        }
+
+        .rating-title {
+          @apply text-primary-gray;
+          margin-right: map-get($margins, "text-xs");
+        }
+      }
+      .rating-content {
+        padding-top: map-get($margins, "section-xs");
+        padding-bottom: map-get($margins, "section-xs");
+        font-size: map-get($map: $fontSizes, $key: "text-3xs");
+      }
+    }
+  }
+}
+
+.sessionCard {
+  @apply relative w-full  shadow-xl;
+  cursor: pointer;
+  .sessionCard-head {
+    position: relative;
+
+    .sessionCard-head-image {
+      @apply h-full bg-center bg-cover;
+    }
+    .card-badge-transparent-bg {
+      right: 3%;
+      top: 5%;
+      left: unset;
+    }
+
+    .sessionCard-schedule {
+      @apply absolute bottom-0 right-0 flex justify-between -mb-1 bg-white cursor-pointer;
+      padding: map-get($paddings, "section-sm");
+      .sessionCard-day-date {
+        @apply font-bold leading-100 font-montserrat;
+        color: black;
+        margin-right: map-get($margins, "text-xs");
+        font-size: map-get($fontSizes, "text-md");
+      }
+
+      .sessionCard-hour-date {
+        @apply font-medium leading-100 font-montserrat;
+        color: black;
+        font-size: map-get($fontSizes, "text-md");
+      }
+    }
+  }
+
+  .sessionCard-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .sessionCard-title {
+      @apply overflow-hidden font-bold leading-6 whitespace-no-wrap font-montserrat;
+      text-overflow: ellipsis;
+      font-size: map-get($map: $fontSizes, $key: "text-2xs");
+    }
+
+    .sessionCard-coach-name {
+      @apply font-montserrat;
+      color: $text-color;
+      text-overflow: ellipsis;
+      font-weight: 300;
+      font-size: map-get($map: $fontSizes, $key: "text-2xs");
+    }
+
+    .sessionCard-subscribed {
+      display: flex;
+      align-items: center;
+      .sessionCard-subscribed-icon {
+      }
+    }
+  }
+
+  .sessionCard-subscription-button {
+    margin: 0; 
+    font-weight: 400;
+  }
+  
+  .sessionCard-subscribed-button {
+    @apply text-xs mt-4;
+    @include mq(medium) {
+      @apply text-13;
+    }
+    margin: 0;
+    display: flex;
+    font-weight: 400;
+    color: black;
+    align-items: center;
+  }
+}
+
+.notificationCard {
+  @apply flex items-center w-full h-full shadow-lg border-b;
+
+  .notificationCard-avatar-box {
+    display: none;
+    @include mq(medium) {
+      display: block;
+      position: relative;
+      @apply w-16;
+    }
+  }
+
+  .notificationCard-avatar {
+    @apply block overflow-hidden text-center bg-center bg-cover rounded-full;
+  }
+
+  .notificationCard-body {
+    @apply flex flex-col justify-around w-full;
+    .notificationCard-title {
+      @apply font-bold text-14 text-primary-darkGray;
+    }
+
+    .notificationCard-content {
+      @apply flex-1 text-primary-gray;
+      margin-right: map-get($margins, "text-sm");
+      font-size: map-get($fontSizes, "text-3xs");
+    }
+
+    .notificationCard-date {
+      @apply leading-180 text-primary-lightGray;
+      font-size: map-get($fontSizes, "text-2xs");
+    }
+  }
+}
+
+.pricingCard {
+  @apply max-w-lg mx-auto my-5;
+
+  @include mq(large) {
+    @apply max-w-none mx-0;
+  }
+
+  .pricingCard-secondary {
+    @apply mt-6;
+
+    @include mq(large) {
+      @apply my-0;
+    }
+  }
+
+  .pricingCard-box {
+    @apply relative rounded-lg shadow-xl;
+  }
+
+  .pricingCard-secondary-box {
+    @apply h-full flex flex-col overflow-hidden;
+  }
+
+  .pricingCard-highlight {
+    @apply pointer-events-none absolute inset-0 rounded-lg border-2 border-primary-accent;
+  }
+
+  .pricingCard-badge-form {
+    @apply absolute inset-x-0 top-0 transform translate-y-px;
+    .pricingCard-badge-position {
+      @apply flex justify-center transform -translate-y-1/2;
+
+      .pricingCard-badge {
+        @apply inline-flex rounded-full bg-primary-accent px-4 py-1 text-sm font-semibold tracking-wider uppercase text-white;
+      }
+    }
+  }
+
+  .pricingCard-header {
+    @apply bg-white rounded-t-lg px-6 pt-12 pb-10;
+
+    .pricingCard-header-extra {
+      @apply text-center text-lg font-semibold text-primary-accent uppercase tracking-widest;
+    }
+    .pricingCard-title {
+      @apply mt-2 text-center text-3xl font-semibold text-gray-900 -mx-6;
+
+      @include mq(medium) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    .pricingCard-price-display {
+      @apply mt-4 flex items-center justify-center;
+
+      .pricingCard-currency-symbol {
+        @apply mt-2 mr-1 text-4xl;
+      }
+
+      .pricingCard-currency-symbol-primary {
+        @apply leading-none text-5xl;
+        @include mq(medium) {
+          @apply text-4xl;
+        }
+      }
+
+      .pricingCard-currency-text {
+        @apply font-semibold text-gray-400 tracking-wide text-3xl;
+        @include mq(medium) {
+          @apply text-2xl;
+        }
+      }
+
+      .pricingCard-price {
+        @apply px-3 flex items-start tracking-tight font-medium text-gray-900;
+        @include mq(medium) {
+          @apply text-6xl;
+        }
+      }
+
+      .pricingCard-vat {
+        @apply -mr-8 font-sans text-sm text-gray-500 font-medium leading-none;
+      }
+    }
+  }
+
+  .pricingCard-body {
+    @apply border-t-2 border-gray-100 rounded-b-lg px-10 py-10;
+    background-color: #f9fafb;
+    @include mq(medium) {
+      @apply pt-10 pb-8 px-6;
+    }
+  }
+  // flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10
+}

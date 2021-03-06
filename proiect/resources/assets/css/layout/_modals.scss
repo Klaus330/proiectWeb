@@ -1,0 +1,239 @@
+//
+// MODALS
+// All styling related to modals & pop-ups
+//
+
+.bg-smoke {
+  background-color: rgba(0,0,0,.4);
+}
+
+/* Modal animation */
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.modal{
+  @apply fixed inset-0 z-50 flex overflow-auto bg-smoke;
+
+  .modal-dialog{
+    @apply flex flex-col w-10/12 m-auto bg-white;
+    @include mq(large){
+      @apply w-4/12;
+    }
+  }
+  .modal-header{
+    @apply relative;
+    padding-right:map-get($map: $paddings, $key: 'section');
+  }
+  .modal-close{
+    @apply absolute top-0 right-0 text-2xl text-black cursor-pointer;
+    margin-top:map-get($margins,'text-sm');
+    margin-right:map-get($margins,'text-sm');
+  }
+
+  .modal-button-position{
+    display:flex;
+    flex-direction: column;
+    @include mq(medium){
+      flex-direction: row;
+    }
+  }
+}
+
+.modal-horizontal-header-title-box{
+  @apply absolute bottom-0 right-0 z-10 bg-white;
+  padding-left:map-get($map: $paddings, $key: 'section-sm');
+  padding-right:map-get($map: $paddings, $key: 'section-sm');
+  padding-top:map-get($map: $paddings, $key: 'section-sm');
+  padding-bottom:map-get($map: $paddings, $key: 'section-sm ');
+  margin-right:map-get($margins,'section-sm');
+
+  @include mq(medium){
+    padding-left:map-get($map: $paddings, $key: 'section');
+    padding-right:map-get($map: $paddings, $key: 'section');
+    padding-top:map-get($map: $paddings, $key: 'section-sm');
+    padding-bottom:map-get($map: $paddings, $key: 'section-sm');
+    margin-right:map-get($margins,'section-sm');
+  }
+
+
+  @include mq(xxlarge){
+    margin-right:map-get($margins,'section-sm');
+  }
+
+  .modal-horizontal-title{
+    @include title;
+  }
+}
+
+.modal-horizontal-header-image{
+  @apply w-full;
+  position: relative;
+  min-height: 167px;
+  background-size: cover;
+  background-position: center;
+}
+
+.modal-horizontal-body{
+  padding:map-get($paddings,'text-sm');
+  @include mq(medium){
+    padding:map-get($paddings,'text-sm') map-get($paddings,'text');
+  }
+}
+
+
+.register-modal {
+  @apply fixed inset-0 z-50 flex overflow-scroll -mb-20;
+}
+
+.register-width {
+  @apply flex w-11/12 m-auto bg-white;
+  @include mq(medium){
+    @apply w-10/12;
+  }
+
+  @include mq(large){
+    @apply w-8/12;
+  }
+
+  @include mq(xlarge){
+    @apply w-6/12;
+  }
+}
+
+.form-align {
+  @apply relative flex flex-col w-full;
+  @include mq(medium){
+    flex-direction: row;
+    padding-bottom: 0;
+  }
+}
+
+.img-register-div {
+  width: 100%;
+  @include mq(medium){
+    @apply w-2/5;
+  }
+  @include mq(large){
+    @apply w-2/4;
+  }
+}
+
+.register-title {
+  @apply absolute z-10 bg-white text-black bottom-0 right-0 text-4xl font-bold;
+  padding:map-get($paddings,'text');
+  @include mq(medium){
+    height: fit-content;
+    @apply -mr-10 top-0 right-0;
+    padding:map-get($paddings, 'text');
+  }
+
+  @include mq(large){
+    @apply -mr-10;
+  }
+}
+
+.register-form {
+  width: 100%;
+  padding-bottom:map-get($map: $paddings, $key: 'section' );
+  @include mq(medium){
+    @apply w-4/5;
+    margin-top: map-get($map: $margins, $key: 'section-lg');
+    padding-top: map-get($map: $paddings, $key: 'section-xs');
+  }
+
+  @include mq(large){
+    @apply w-2/4 h-full;
+    margin-top: map-get($map: $margins, $key: 'section');
+  }
+}
+
+.register-form-spacing {
+  @apply w-full;
+  padding-left:map-get($paddings,'section-xs');
+  padding-right:map-get($paddings,'section-xs');
+  @include mq(large){
+    padding:map-get($paddings,'section-sm');
+    padding-top: map-get($paddings,'section');
+  }
+}
+
+.register-form-scrollable {
+  @apply h-full overflow-y-auto;
+}
+
+.close-register-icon {
+  @apply absolute top-0 right-0 mt-1 mr-2 cursor-pointer text-2xl text-black;
+  @include mq(medium){
+    margin-top:map-get($margins,'section-sm');
+    margin-right:map-get($margins,'section');
+  }
+}
+
+.register-button {
+  @apply w-full text-xs font-medium text-black rounded-sm bg-primary-accent bg-opacity-10;
+  padding:map-get($paddings,'section-xs') map-get($paddings,'section-sm');
+}
+.avatar-cropper-btn {
+  @apply text-black;
+}
+
+.avatar-cropper-btn:hover {
+  @apply bg-primary-accent text-white;
+}
+
+.cropper-point, .cropper-line {
+  @apply bg-primary-accent;
+}
+
+
+.reset-modal-dialog{
+  @apply w-10/12 mx-auto; 
+}
+
+.popup-close{
+  color: #fff !important;
+}
+
+.popup-background-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.popup-heading{
+  @apply text-white font-montserrat text-center;
+  font-size: map-get($fontSizes, "text-xl");
+  font-weight: 500;
+  padding: map-get($paddings, "generix-3sm");
+}
+
+.soicalpopup-links{
+  padding: map-get($paddings, "generix-sm");
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.freetrial-links{
+  padding: map-get($paddings, "generix-sm") map-get($paddings, "generix-md-lg");
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.popup-icon{
+  @apply w-10/12 mx-auto;
+  padding: map-get($paddings, "popup-icon-xs");
+  background-color: #fff;
+  border-radius: 1px;
+  height: 95px;
+}

@@ -1,0 +1,200 @@
+/**
+ * Basic typography style for copy text
+ */
+
+* {
+  font-family: $primary-font-family;
+}
+
+html{
+  font-size: 1rem;
+}
+
+body {
+  @include basic-font;
+  color: $text-color;
+}
+
+// RICH TEXT
+// Used in WYSIWYG editors and display of this WYSIWYG entry.
+
+.richtext {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+  h3 {
+    @apply text-lg;
+  }
+  h4 {
+    @apply text-base;
+  }
+  h5 {
+    @apply text-sm;
+  }
+  h6 {
+    @apply text-xs;
+  }
+  a {
+    @apply text-blue-600 underline;
+  }
+  ul {
+    @apply list-disc ml-8;
+  }
+  ol {
+    @apply list-decimal ml-8;
+  }
+  blockquote {
+    @apply italic mx-4 border-l-4;
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  blockquote::before {
+    @apply px-1;
+    content: open-quote;
+  }
+  blockquote::after {
+    @apply px-1;
+    content: close-quote;
+  }
+  .ql-align-left {
+    @apply text-left;
+  }
+  .ql-align-center {
+    @apply text-center;
+  }
+  .ql-align-right {
+    @apply text-right;
+  }
+
+}
+
+// Every heading is a title
+h1 , h2 , h3 , h4, h5, h6{
+  @include title;
+}
+
+// Every paragraph should have a basic font
+p{
+  @include basic-font;
+  font-size:$tertiary-font-size;
+
+  @include mq(medium){
+    font-size:$secondary-font-size;
+  }
+
+  @include mq(large){
+    font-size:$primary-font-size;
+  }
+
+  @include mq(xxlarge){
+    font-size: map-get($map: $fontSizes, $key: 'text-md');
+  }
+
+  @include mq(xxxlarge){
+    font-size: map-get($map: $fontSizes, $key: 'text-lg');
+  }
+}
+
+h1{
+  font-size: map-get($map: $fontSizes, $key: 'text-xl') !important;
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text-2xl') !important;
+  }
+
+  @include mq(large){
+    font-size:map-get($map: $fontSizes, $key: 'text-2xl') !important;
+  }
+
+  @include mq(xxxlarge){
+    font-size:map-get($map: $fontSizes, $key: 'text-4xl') !important;
+  }
+}
+
+h2{
+  font-size: map-get($map: $fontSizes, $key: 'text-lg');
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text-2xl');
+  }
+
+  @include mq(large){
+    font-size:map-get($map: $fontSizes, $key: 'text-4xl');
+  }
+
+  @include mq(xxxlarge){
+    font-size:map-get($map: $fontSizes, $key: 'text-8xl');
+  }
+}
+
+h3{
+  font-size: map-get($map: $fontSizes, $key: 'text-lg');
+  line-height: 122%;
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text-xl');
+  }
+
+  @include mq(large){
+    font-size:map-get($map: $fontSizes, $key: 'text-2xl');
+  }
+
+  @include mq(xxxlarge){
+    font-size:map-get($map: $fontSizes, $key: 'text-6xl');
+  }
+}
+
+
+h4{
+  font-size: map-get($map: $fontSizes, $key: 'text-md');
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text-lg');
+  }
+
+  @include mq(large){
+    font-size:map-get($map: $fontSizes, $key: 'text-xl');
+  }
+
+  @include mq(xxxlarge){
+    font-size:map-get($map: $fontSizes, $key: 'text-5xl');
+  }
+}
+
+
+h5{
+  font-size: map-get($map: $fontSizes, $key: 'text-xs');
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text');
+  }
+
+  @include mq(large){
+    font-size:map-get($map: $fontSizes, $key: 'text-lg');
+  }
+  @include mq(xxxlarge){
+    font-size:map-get($map: $fontSizes, $key: 'text-5xl');
+  }
+}
+
+h6{
+  font-size: map-get($map: $fontSizes, $key: 'text-3xs');
+  @include mq(medium){
+    font-size: map-get($map: $fontSizes, $key: 'text-xs');
+  }
+
+  @include mq(large){
+    font-size: map-get($map: $fontSizes, $key: 'text');
+  }
+  @include mq(xxxlarge){
+    font-size: map-get($map: $fontSizes, $key: 'text-2xl');
+  }
+}
+
+
+.text-info{
+  @apply leading-180 text-primary-gray;
+  font-size:map-get($fontSizes,'text-3xs');
+  @include mq(medium){
+    font-size:map-get($fontSizes,'text-3xs');
+  }
+}

@@ -4,11 +4,11 @@
 function view($name, $data = [])
 {
     extract($data);
-    return require "views/{$name}.view.php";
+    return require "resources/views/{$name}.view.php";
 }
 
 
 function redirect($path)
 {
-    return require "views/{$path}.view.php";
+    return require "resources/views/{$path}.view.php";
 }

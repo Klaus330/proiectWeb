@@ -1,0 +1,137 @@
+// -----------------------------------------------------------------------------
+// Sections
+// All the style related to sections
+// -----------------------------------------------------------------------------
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: map-get($map: $margins, $key: 'section');
+  margin-bottom: map-get($map: $margins, $key: 'section');
+  
+  @include mq(large){
+    flex-direction: row;
+    margin-bottom: map-get($map: $margins, $key: 'section');
+  }
+}
+
+// For the section-body-overlap we need more spacing on the bottom
+.section-overlap{
+  @include mq(medium){
+    margin-bottom:map-get($margins,'section-xxlg');  
+  }
+
+  @include mq(large){
+    margin-bottom:map-get($margins,'section');  
+  }
+}
+
+.section-col-reverse{
+  flex-direction: column-reverse;
+  @include mq(large) {
+    flex-direction: row;
+  }
+}
+
+.section-col{
+  flex-direction: column;
+}
+
+.section-body{
+  @apply w-full;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: map-get($paddings, 'section-xs');
+  background:white;
+  
+  @include mq(medium){
+    padding-top:map-get($map: $paddings, $key: 'section');
+    padding-bottom:map-get($map: $paddings, $key: 'section');
+    padding-left: map-get($paddings, 'section');
+    padding-right: map-get($paddings, 'section');
+  }
+
+  @include mq(large){
+    @apply w-1/2;
+  }
+}
+
+.section-body-row{
+  flex-direction: column;
+  @include mq(medium) {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+.section-body-overlap{
+  @include mq(medium){
+    @apply w-2/3;
+    @include overlap-left;
+    bottom:-30%;
+    z-index: 10;
+    padding-left:map-get($paddings,'section-md');
+    padding-right:map-get($paddings,'section-md');
+    padding-top:map-get($paddings,'section');
+    padding-bottom:map-get($paddings,'section');
+    
+  }
+  
+  @include mq(large){
+    @apply w-1/2;
+    position: relative;
+    margin-bottom: map-get($map: $margins, $key: 'section');
+  }
+}
+
+
+.section-body-content{
+  @include mq(xxlarge){
+    padding: map-get($map: $paddings, $key: 'text-lg');
+  }
+}
+
+
+
+.section-image{
+  @apply w-full;
+  background-size: cover;
+  background-position: center center;
+  @include mq(large){
+    @apply w-1/2;
+  }
+}
+
+.section-image-overlap{
+  @apply w-full;
+  @include mq(medium){
+    @apply w-full;
+  }
+  @include mq(large){
+    @apply w-1/2;
+  }
+}
+
+.section-video{
+  @apply w-full;
+  position: relative;
+  object-fit: cover;
+  object-position:center;
+  
+  @include mq(medium){
+    @apply w-1/2;
+  }
+}
+
+
+.section-video-overlap{
+  @apply w-full;
+  @include mq(medium){
+    @apply w-full;
+  }
+  @include mq(large){
+    @apply w-1/2;
+  }
+}

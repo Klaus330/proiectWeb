@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the badge components.
+// -----------------------------------------------------------------------------
+.google-badge{
+  @apply w-3/6;
+  @include mq(medium){
+    @apply w-2/6;
+  }
+  @include mq(large){
+    @apply w-2/6;
+  }
+}
+
+.badge{
+  @apply font-semibold;
+  padding:map-get($paddings,'badge-xs');
+  margin-right:map-get($margins,'badge-xs');
+  margin-bottom:map-get($margins,'badge-xs');
+  font-size:map-get($fontSizes, 'text-2xs');
+  color: $dark-color;
+}
+
+.badge-lg{
+  font-size:map-get($fontSizes, 'text-3xs');
+  @include mq(medium){
+    font-size:map-get($fontSizes, 'text-sm');
+  }
+}
+
+.badge-sm{
+  font-size:map-get($fontSizes, 'text-4xs');
+  padding:map-get($paddings,'badge-xs');
+  margin-right:map-get($margins,'none');
+  margin-bottom:map-get($margins,'none');
+  @include mq(medium){
+    font-size:map-get($fontSizes, 'text-4xs');
+    padding:map-get($paddings,'badge-xs');
+    margin-right:map-get($margins,'none');
+    margin-bottom:map-get($margins,'none');
+  }
+}
+
+.badge-primary{
+  @apply bg-primary-accent text-white;
+}
+
+.badge-primary-light{
+  @apply bg-purple-300 text-purple-900;
+}
+
+.badge-danger{
+  @apply bg-red-300 text-red-900;
+}
+
+.badge-success{
+  @apply bg-green-300 text-green-900;
+}
+
+.badge-warning{
+  @apply bg-yellow-300 text-yellow-900;
+}
+
+.badge-info{
+  @apply bg-blue-200 text-blue-900;
+}
+
+.badge-dark{
+  @apply bg-black text-white;
+}
+
+.badge-light{
+  @apply bg-primary-lighterGray;
+}
+
+.badges-container{
+  @apply flex flex-row items-center justify-start flex-wrap;
+}

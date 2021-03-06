@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Core;
 
 class Request
 {
@@ -14,5 +15,4 @@ class Request
     {
         return $_SERVER['REQUEST_METHOD'];
     }
-
 }

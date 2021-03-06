@@ -1,0 +1,541 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+
+// Keep in mind that all the intro-* classes
+// have to be inside a div with the class of
+// .home-intro-section in order to be applyed
+.home-intro-section {
+  @apply relative flex flex-1 w-full h-screen;
+  flex-direction: column;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+
+
+  @include maxmq(small){
+    height: 170vh;
+  }
+
+  @include betweenmq(320px, 374px){
+    height: 170vh;
+  }
+
+  @include betweenmq(374px, 376px){
+    height: 160vh;
+  }
+
+  @include betweenmq(400px, 420px){
+    height: 162vh;
+  }
+ 
+  @include betweenmq(420px, 540px){
+    height: 160vh;
+  }
+
+  @include betweenmq(540px, 768px){
+    height: 160vh;
+  }
+
+  @include mq(medium) {
+    margin-bottom: map-get($paddings, "section-xxlg");
+
+  }
+
+  @include mq(large) {
+    margin: 0;
+  }
+
+  @include mq(medium) {
+    margin-bottom: map-get($paddings, "section-xxlg");
+
+  }
+
+  @include mq(large) {
+    margin: 0;
+  }
+
+  .intro-image {
+    @apply mb-1 min-h-60 w-full;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+    @include mq(large) {
+      @apply w-2/3;
+      flex-direction: row;
+      min-height: 80vh;
+    }
+  }
+
+  .intro-video {
+    @apply mb-1 min-h-40 w-full;
+    position: relative;
+    object-fit: cover;
+    object-position:center;
+    margin-top: map-get($margins, "section-md");
+    min-height: 100vh;
+
+    @include mq(medium){
+      min-height: 100vh;
+    }
+
+    @include mq(large) {
+      flex-direction: row;
+      margin-top: 0;
+    }
+  }
+
+  .intro-content {
+    @apply z-10 bg-white w-full;
+    padding: map-get($paddings, 'section-sm') map-get($paddings, 'section-sm');
+
+    @include mq(medium) {
+      @apply absolute right-0 w-full;
+      bottom: -20%;
+      padding: map-get($paddings, 'section-md') map-get($paddings, 'section-md');
+    }
+    @include betweenmq(910px, 920px){
+      width: 100%;
+    }
+
+    @include mq(large) {
+      padding: map-get($paddings, 'section-md') map-get($paddings, 'section-lg');
+      @apply absolute bottom-0 right-0 w-2/3;
+    }
+
+    @include mq(xlarge){
+      @apply w-1/2;
+    }
+
+    .intro-title {
+      margin-top: map-get($margins, 'text-xs');
+      margin-bottom: map-get($margins, 'text-sm');
+      line-height: 100%;
+
+      @include mq(large) {
+        font-size: map-get($fontSizes, 'text-xl');
+      }
+
+      @include mq(xlarge) {
+        font-size: map-get($fontSizes, 'text-4xl');
+      }
+    }
+
+    .intro-description {
+      text-align: justify;
+      font-weight: 600;
+
+      @include mq(medium) {
+        font-size: 22px;
+      }
+
+      @include mq(large) {
+        font-size: 24px;
+      }
+
+      @include mq(xlarge) {
+        font-size: 24px;
+      }
+    }
+
+    // Extra margin for more space above home page buttons
+    .button-primary {
+      @apply mt-10;
+    }
+  }
+}
+
+// The section that has the mockup model
+.home-mockup-section {
+  @apply flex flex-col align-middle justify-start;
+  padding: map-get($paddings, 'section-sm');
+  margin-top: map-get($margins, 'section-sm');
+
+  @include mq(small) {
+    @apply flex-col;
+    padding: map-get($paddings, 'section-md') map-get($paddings, 'section-md');
+  }
+
+  @include mq(medium) {
+    @apply flex-col items-center;
+    padding: map-get($paddings, 'section-md') map-get($paddings, 'section-md');
+  }
+
+  @include mq(large) {
+    @apply flex-row;
+    padding: map-get($paddings, 'section-md') map-get($paddings, 'section-lg');
+  }
+
+  // The mockup model image style
+  .mockup-image {
+    @apply flex mx-auto;
+    min-height: 20vh;
+    object-fit: center;
+
+    @include mq(medium) {
+      @apply w-1/2;
+    }
+
+    @include mq(large) {
+      @apply w-3/7;
+      margin-right: 0;
+    }
+
+    @include mq(xlarge) {
+      width: auto;
+      max-height: 60vh;
+      margin-right: 0;
+    }
+  }
+
+  // the white box content style
+  .mockup-content {
+    @apply w-full;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    @include mq(medium) {
+      @apply items-center justify-center;
+    }
+
+    @include mq(large) {
+      @apply items-start w-3/5 ml-10;
+      padding-left: map-get($paddings, 'section');
+    }
+
+    .mockup-title {
+      margin-bottom: map-get($margins, 'section');
+      font-weight: bold;
+      line-height: 130%;
+    }
+
+    .mockup-description {
+      text-align: justify;
+    }
+  }
+}
+
+//Trial Banner
+.trial-banner{
+  margin-top: auto;
+  background-color: #18204c;
+  justify-content: space-evenly;
+
+  @include maxmq(375px){
+    padding-top: 5rem;
+  }  
+
+}
+
+.home-reasons-section {
+  width:100%;
+  min-height: $min-background-image-height;
+
+  .reasons-image-box {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-height: 300px;
+
+    @include mq(large) {
+      @apply w-2/3 flex-1;
+    }
+
+    .reasons-image {
+      position: relative;
+      min-height: $min-background-image-height;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .reasons-video {
+      min-height: 50vh;
+      transform: scale(3);
+
+      @include mq(medium) {
+        min-height: 80vh;
+      }
+
+      @include mq(large) {
+        min-height: $min-background-image-height;
+        transform: scale(3);
+      }
+
+      @include mq(xlarge) {
+        transform: scale(2);
+      }
+    }
+
+    // This is the black squared that is placed over the video/image
+    // so we can read the text easier
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+
+      // The text that goes on top of the video
+      .video-slogan {
+        @apply w-5/6;
+
+        margin-top: map-get($map: $margins, $key: 'section');
+        margin-bottom: map-get($map: $margins, $key: 'section');
+        justify-content: center;
+
+        @include mq(medium) {
+          @apply w-5/6;
+        }
+
+        @include mq(large) {
+          @apply w-5/6;
+        }
+
+        .slogan {
+          @apply mb-6;
+          color: white;
+          font-weight: bold;
+          line-height: 130%;
+
+
+          @include mq(medium) {
+            font-size: 32px;
+          }
+
+          @include mq(large) {
+            font-size: 36px;
+          }
+        }
+
+        .slogan-button {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .reasons-content-box {
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: $primary-color;
+    color: white;
+
+    @include mq(medium) {
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    @include mq(large) {
+      @apply w-3/7 flex-col;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reasons-group {
+      @apply w-full mx-auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reason {
+      @apply w-full mb-4;
+      display: flex;
+      line-height: 180%;
+
+      @include mq(medium) {
+        @apply w-full;
+        margin-top: map-get($map: $paddings, $key: 'section');
+      }
+
+      @include mq(large) {
+        @apply w-3/5;
+      }
+
+      .reason-icon {
+        margin-right: map-get($map: $margins, $key: 'image-sm');
+        margin-left: map-get($map: $margins, $key: 'image-sm');
+      }
+
+      .reason-title {
+        @apply font-semibold;
+        color: white;
+        font-size: 22px;
+      }
+
+      .reason-description {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.home-tryitout-section {
+  @apply flex flex-1 flex-col;
+
+  @include mq(large) {
+    @apply flex-row;
+  }
+
+  .tryitout-image {
+    @apply relative w-full;
+    margin: 0 auto;
+
+    @include mq(large) {
+      @apply w-1/2;
+    }
+  }
+
+  .tryitout-content {
+    @apply w-full;
+    padding-left: map-get($paddings, 'section');
+    padding-right: map-get($paddings, 'section');
+
+    @include mq(large) {
+      @apply w-1/2 my-auto;
+      padding-top: map-get($paddings, 'section-lg');
+      padding-bottom: map-get($paddings, 'section-lg');
+    }
+
+    .tryitout-title {
+      @apply mb-5;
+    }
+  }
+}
+
+.home-yogaclasses-section {
+  @apply relative;
+  padding-left: map-get($paddings, 'section-sm');
+
+  @include mq(medium) {
+    margin-top: map-get($margins, 'section');
+    padding-left: map-get($paddings, 'section');
+  }
+
+  @include mq(large) {
+    padding-left: map-get($paddings, 'section-xxlg');
+  }
+
+  @include mq(xlarge) {
+    padding-left: map-get($paddings, 'section-xxxlg');
+  }
+
+  .yogaclasses-categories {
+    @apply relative flex flex-1 overflow-x-hidden;
+    margin-top: map-get($margins, 'section');
+
+    .categories-gradient {
+      @apply absolute right-0 w-1/3 h-full;
+      background: -moz-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.01) 0%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 1) 100%);
+      background: -webkit-linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.01) 0%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 1) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.01) 0%,
+        rgba(0, 0, 0, 0.7) 40%,
+        rgba(0, 0, 0, 1) 100%);
+    }
+  }
+
+  .yogaclasses-description {
+    @apply w-full text-sm;
+    margin-top: map-get($margins, 'text-lg');
+    margin-bottom: map-get($margins, 'text-sm');
+    padding-right: map-get($margins, 'text-sm');
+    text-align:justify;
+
+    @include mq('xlarge') {
+      @apply w-1/2 text-lg;
+      margin-top: map-get($margins, 'text-lg');
+    }
+  }
+}
+
+
+.home-joinus-section {
+  @apply flex-1;
+
+  .joinus-content {
+    padding-left: map-get($map: $paddings, $key:'section-sm');
+    padding-right: map-get($map: $paddings, $key:'section-sm');
+    margin-top: map-get($map: $margins, $key:'section-sm');
+    margin-bottom: map-get($map: $margins, $key:'section-sm');
+
+    @include mq(medium) {
+      @apply w-full;
+    }
+
+    @include mq(large) {
+      padding-left: map-get($map: $paddings, $key:'section');
+      padding-right: map-get($map: $paddings, $key:'section');
+    }
+
+    @include mq(xlarge) {
+      padding-left: map-get($map: $paddings, $key:'section-lg');
+      padding-right: map-get($map: $paddings, $key:'section-lg');
+    }
+
+    .joinus-title {
+      margin-top: map-get($margins, 'text-sm');
+    }
+
+    .joinus-description {
+      font-size: $tertiary-font-size;
+    }
+  }
+
+  .joinus-wall {
+    display: flex;
+    width: 100%;
+
+    @include mq(medium) {
+      margin-bottom: map-get($margins, "section-2lg");
+    }
+
+    @include mq(large) {
+      @apply w-2/3;
+    }
+  }
+
+  // Extra margin for more space above home page buttons
+  .button-primary {
+    @apply mt-10;
+  }
+}
+
+
+.home-bottom-banner{
+  margin-bottom: 0%;
+} 
+
+
+.bottom-banner .bottom-banner-video{
+  @include betweenmq(910px, 920px){
+    margin-bottom: 0rem;
+  }
+}
+
+.section-body-overlap{
+  @include mq(medium) {
+    bottom: -100%;
+  }
+}
