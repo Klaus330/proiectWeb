@@ -1,0 +1,14 @@
+{
+    "name": "claudiu/web",
+    "authors": [
+        {
+            "name": "Claudiu Popa",
+            "email": "claudiupopa330@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    }
+}
