@@ -21,4 +21,12 @@ class QueryBuilder{
         return $statement->fetchAll(\PDO::FETCH_CLASS);
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPdo()
+    {
+        return $this->pdo;
+    }
+
 }
